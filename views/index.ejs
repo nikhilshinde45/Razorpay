@@ -48,7 +48,7 @@
 
           if(verify.ok){
             //After payment success
-            const paymentId = response.razorpay_payment
+            const paymentId = response.razorpay_payment_id
             window.location.href =` /user/payment-success?paymentId=${paymentId}`;
 
           }else{
