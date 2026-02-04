@@ -21,7 +21,7 @@ const PORT = process.env.PORT || 3000;
 //   res.send("This is razorpay");
 // });
 
-app.get('/home',(req,res)=>{
+app.get('/user',(req,res)=>{
  
   res.render("index",
     {
@@ -29,7 +29,12 @@ app.get('/home',(req,res)=>{
     }
   )
 })
+
 app.use('/user',userRouter);
+app.get('/user/payment-success',(req,res)=>{
+     res.sendFile(path.join(__dirname,'views/success.html'))
+})
+
 
 app.listen(PORT,()=>{
   console.log(`Server is runnig on http://localhost:${PORT}`);
